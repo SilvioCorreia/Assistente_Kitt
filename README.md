@@ -2,27 +2,71 @@
 
 This is a Python-based AI assistant inspired by *Jarvis*, capable of:
 
-- 🔍 Searching the web  
+- 🔍 Searching the web
 - 🌤️ Weather checking
-- 📨 Sending Emails 
-- 📷 Vision through camera (Web app
+- 📨 Sending Emails
 - 🗣️ Speech
-- 📝 Chat (Web app) 
+- 📝 Chat-style interaction
 
-This agent uses LiveKit that is 100% free!
+This project uses LiveKit and Google Gemini services for the full voice experience.
+
+---
+
+## 🚀 Quick start
+
+### 1) Create and activate the virtual environment
+
+PowerShell:
+
+```powershell
+cd C:\projetos\jarvis
+py -3 -m venv .venv
+.\.venv\Scripts\Activate.ps1
+```
+
+### 2) Install dependencies
+
+```powershell
+python -m pip install --upgrade pip
+python -m pip install -r requirements.txt
+```
+
+### 3) Configure environment variables
+
+Edit [.env](.env) and replace the placeholder values with real ones.
+
+Required for the full runtime:
+- LIVEKIT_URL
+- LIVEKIT_API_KEY
+- LIVEKIT_API_SECRET
+- GOOGLE_API_KEY
+
+Optional for email support:
+- GMAIL_USER
+- GMAIL_APP_PASSWORD
+
+### 4) Run locally without real credentials
+
+If you want to test the project immediately before configuring API keys, run:
+
+```powershell
+python agent.py local
+```
+
+This starts a simple local fallback chat loop.
+
+### 5) Run the full agent
+
+Once the credentials are configured:
+
+```powershell
+python agent.py console
+```
 
 ---
 
 ## 📽️ Tutorial Video
 
-Before you start, **make sure to follow this tutorial to set up the voice agent correctly**:  
+Before you start with the full voice experience, make sure to follow the setup tutorial:
 🎥 [Watch here](https://youtu.be/An4NwL8QSQ4?si=v1dNDDonmpCG1Els)
-
----
-1. Create the Virtual Envrionment first!
-2. Activate it
-3. Install all the required libraries in the requirements.txt file
-4. In the .ENV - File you should paste your API-Keys and your LiveKit Secret, LiveKit URL.
-   If you want to use the Send Email Tool also specify your Gmail Account and App Password. 
-5. Make sure that your LiveKit Account is set-up correctly. 
 
