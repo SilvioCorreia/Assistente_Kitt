@@ -1,5 +1,5 @@
-#.\executar_Kitt\Scripts\Activate.ps1
-#python agent.py start
+#  .\executar_Kitt\Scripts\Activate.ps1
+#  python agent.py start
 import os
 import sys
 from typing import Sequence
@@ -52,8 +52,11 @@ async def entrypoint(ctx: agents.JobContext):
     # 1. Primeiro conecta na sala
     await ctx.connect()
 
-    session = AgentSession()
-
+    session = AgentSession(
+        llm=google.beta.realtime.RealtimeModel(
+            voice="Kitt",
+    )
+    )
     # 2. Depois inicia a sessão do agente
     await session.start(
         room=ctx.room,
